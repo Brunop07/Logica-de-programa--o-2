@@ -1,7 +1,7 @@
 function sortear() {
     let quantidade = parseInt (document.getElementById('quantidade').value);
-let de = parseInt (document.getElementById('de').value);
-let ate = parseInt (document.getElementById('ate').value);
+    let de = parseInt (document.getElementById('de').value);
+    let ate = parseInt (document.getElementById('ate').value);
 
 if(de >= ate){
     alert('campo "Do número" deve ser inferior ao campo "Até o nùmero". Verifique!');
@@ -10,6 +10,7 @@ if(de >= ate){
 
 if(quantidade > (ate - de + 1)){
     alert('campo "quantidade" deve ser menor ou igual ao intervalo infomado no campo "Do número" até o campo "Até o número". Verifique!');
+    return;
 }
 
 let sorteados = [];
@@ -41,17 +42,17 @@ console.log(obterNumeroAleatorio);
 function alterarStatusbotao(){
     let botao = document.getElementById('btn-reiniciar');
 if (botao.classList.contains('container__botao-desabilitado')){
-  botao.classList.remove('container__botao-desabilitado');
-  botao.classList.add('container__botao');
+    botao.classList.remove('container__botao-desabilitado');
+    botao.classList.add('container__botao');
 }else{
-botao.classList.remove('container__botao');
-botao.classList.add('container__botao-desabilitado');
+    botao.classList.remove('container__botao');
+    botao.classList.add('container__botao-desabilitado');
 }
 }
 function reiniciar(){
   document.getElementById('quantidade').value = '';
   document.getElementById('de').value = '';
   document.getElementById('ate').value = '';  
-document.getElementById('resultado').innerHTML = '<label class="texto__paragrafo">Números sorteados:  nenhum até agora</label>';
+  document.getElementById('resultado').innerHTML = '<label class="texto__paragrafo">Números sorteados:  nenhum até agora</label>';
 alterarStatusbotao();
 }
